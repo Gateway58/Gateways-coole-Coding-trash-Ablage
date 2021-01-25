@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+    let a = 0;
+
+function Add1(){
+   a++;
+   let text = 'Number: ' + a;
+let a1 = document.getElementById('a1');
+document.getElementById('Hello').innerHTML = text;
+}
+function Minus1(){
+    a--;
+    let text = 'Number: ' + a;
+let m1 = document.getElementById('m1');
+document.getElementById('Hello').innerHTML = text;
+}
+function Reset(){
+    if(a == 0){
+        console.log('It is already 0!');
+    }
+   else {console.log(a);
+   if(a > 10  || a < -10 ){
+       alert('Do you really want to reset?');
+   }
+   a = 0;
+   let text = 'Number: 0'
+let res = document.getElementById('Reset');
+document.getElementById('Hello').innerHTML = text;
+   }
+}
+</script>   
+    <button class="HelloWorld" onclick="Add1()" id="a1">Add 1</button>
+    <button class="HelloWorld" onclick="Minus1()" id="m1">Minus 1
+    </button>
+    <button class="HelloWorld" onclick="Reset()" id="Reset">Reset</button>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World!</title>
+    <h2 id="Hello">Go Ahead! </h2>
+    <style>
+    html{
+background-image:linear-gradient(99993deg,  #23d941, #1a9cc4);
+}
+.HelloWorld{
+    font-size: 19px;
+    font-family: 'Bahnschrift', sans-serif;
+    border-radius: 7px;
+    position: relative;
+    margin-top: 200px;
+    left: 520px;
+     margin-left: 10px;
+    padding: 10px 20px;
+    border: 2px black;
+    cursor: pointer;
+}
+#a1{
+    background-color: rgba(255, 8, 0, 0.781);
+
+}
+#m1{   
+    background-color: rgb(0, 255, 0);
+}
+#Reset{
+    background-color: rgb(0, 153, 255);
+}
+#Hello{
+    font-size: 25px;
+    font-family: 'Bahnschrift', sans-serif;
+    position: relative;
+    margin-top: 15px;
+    left: 610px;
+     margin-left: 10px;
+    padding: 10px 20px;
+    border: 2px black;
+}
+    </style>
+
+</head>
+<body>
+    
+</body>
+</html>
