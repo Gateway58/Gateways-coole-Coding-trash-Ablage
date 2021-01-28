@@ -10,12 +10,12 @@ void moveMouse(int x, int y){
 int main(){
   POINTER p = (NULL);   //We make a new Pointer to save the x and y coordinates of our mouse.
   while(a == 1){
-    if(GetAsyncKeyState(VK_BACK)){    
+    if(GetAsyncKeyState(VK_BACK)){      //If you press backspace, this code will be executed
       GetCursorPos(&p);     //When we press back it gets the cursor pos and prints that out
       cout <<"x position: " <<p.x <<" y-position: " <<p.y <<endl;
       Sleep(200);         //Sleep so there is a little bit delay to have time to let go of the key
     }
-     if(GetAsyncKeyState(VK_SPACE)){
+     if(GetAsyncKeyState(VK_SPACE)){    //If you press Space, this code will be executed
      cout << "Set the x coordinate: ";
        cin >> mx >> endl;         //we get the x integer value of mx from the users input
        cout <<"Set the y coordinate: ";
@@ -23,7 +23,7 @@ int main(){
        moveMouse(mx, my);       //We say that it should move the mouse to the x coordinate of mx and to the y coordinate of my.
       Sleep(200);
     }
-    if(GetAsyncKeyState(VK_NUMPAD1){
+    if(GetAsyncKeyState(VK_NUMPAD1){  //If you press the numpad 1, this code will be executed
       a = 2;                    //It just makes a == 1 false and breaks the loop. In this case it ends the program.
     }
   }
