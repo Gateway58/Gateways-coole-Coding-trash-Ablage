@@ -3,6 +3,10 @@
 #include <Windows.h>
 using namespace std;
 int a = 1;
+int mx, my;
+void moveMouse(int x, int y){
+  SetCursorPos(x, y);
+}
 int main(){
   POINTER p = (NULL);
   while(a == 1){
@@ -12,7 +16,11 @@ int main(){
       Sleep(200);
     }
      if(GetAsyncKeyState(VK_SPACE)){
-      a = 2;
+     cout << "Set the x coordinate: ";
+       cin >> mx >> endl;
+       cout <<"Set the y coordinate: ";
+       cin >> my >> endl;
+       moveMouse(mx, my);
       
     }
   }
