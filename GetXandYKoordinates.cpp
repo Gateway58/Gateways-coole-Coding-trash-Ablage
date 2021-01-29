@@ -9,7 +9,7 @@ void moveMouse(int x, int y){
 }
 int main(){
   POINTER p = (NULL);   //We make a new Pointer to save the x and y coordinates of our mouse.
-  while(a == 1){
+  while(a == 1){        //this while loop is true at first but later, if you press numpad 1 it is false
     if(GetAsyncKeyState(VK_BACK)){      //If you press backspace, this code will be executed
       GetCursorPos(&p);     //When we press back it gets the cursor pos and prints that out
       cout <<"x position: " <<p.x <<" y-position: " <<p.y <<endl;
@@ -27,5 +27,5 @@ int main(){
       a = 2;                    //It just makes a == 1 false and breaks the loop. In this case it ends the program.
     }
   }
-    
+    return 0;
 }
