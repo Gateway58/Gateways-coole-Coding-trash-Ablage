@@ -4,14 +4,16 @@
 <head>
     <script>
     let a = 0;
- let text = 'Number: ' + a;
+
 function Add1(){
    a++;
+     let text = 'Number: ' + a;
 let a1 = document.getElementById('a1');
 document.getElementById('Hello').innerHTML = text;
 }
 function Minus1(){
     a--;
+     let text = 'Number: ' + a;
 let m1 = document.getElementById('m1');
 document.getElementById('Hello').innerHTML = text;
 }
@@ -24,6 +26,7 @@ function Reset(){
        alert('Do you really want to reset?');
    }
    a = 0;
+          let text = 'Number: ' + a;
 let res = document.getElementById('Reset');
 document.getElementById('Hello').innerHTML = text;
    }
