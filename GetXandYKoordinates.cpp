@@ -22,21 +22,21 @@ int main(){
        cout <<"Set the y coordinate: ";
        cin >> my >> endl;       //we get the integer value of my from the users input
       cout << "Do you want to press the spot?";   //the next code should press the spot you gave the my program if you press yes, but I didnt test it xD.
-				cin >> txt;
-				if (txt != "yes") {
-					moveMouse(mx, my);
+      cin >> txt;
+           if (txt != "yes") {
+      moveMouse(mx, my);
 				}
-				else {
-					moveMouse(mx, my);
-					INPUT in = { 0 }; 
-					in.type = INPUT_MOUSE;
-					in.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
-					SendInput(1, &in, sizeof(in));
-					ZeroMemory(&in, sizeof(in));
-					in.type = INPUT_MOUSE;
-					in.mi.dwFlags = MOUSEEVENTF_LEFTUP;
-					SendInput(1, &in, sizeof(in));
-				}
+	else {
+      moveMouse(mx, my);
+      INPUT in = { 0 }; 
+      in.type = INPUT_MOUSE;
+      in.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
+      SendInput(1, &in, sizeof(in));
+      ZeroMemory(&in, sizeof(in));
+	in.type = INPUT_MOUSE;
+	in.mi.dwFlags = MOUSEEVENTF_LEFTUP;
+      SendInput(1, &in, sizeof(in));
+}
 			
       Sleep(200);
     }
