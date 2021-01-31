@@ -2,7 +2,8 @@
 #include <iostream>
 #include <Windows.h>    //So we can do Sleep and get Asynchkeystate and GetCursorPos/SetCursorPos and other bomfortionöse Stuff.
 using namespace std;
-int a = 1;            //We declare a = 1, so later we can make a while loop and if we press a key in that while loop it changes a and the while loop returns false or so.
+int a = 1;    //We declare a = 1, so later we can make a while loop and if we press a key in that while loop it changes a and the while loop returns false or so.
+string txt;
 int mx, my;           // we use that later for the x and y coordinate in which we want to move the mous.
 void moveMouse(int x, int y){
   SetCursorPos(x, y);     //Set the Cursor to x and y which we declare later
@@ -20,7 +21,23 @@ int main(){
        cin >> mx >> endl;         //we get the x integer value of mx from the users input
        cout <<"Set the y coordinate: ";
        cin >> my >> endl;       //we get the integer value of my from the users input
-       moveMouse(mx, my);       //We say that it should move the mouse to the x coordinate of mx and to the y coordinate of my.
+      cout << "Do you want to press the spot?";   //the next code should press the spot you gave the my program if you press yes, but I didnt test it xD.
+				cin >> txt;
+				if (txt != "yes") {
+					moveMouse(mx, my);
+				}
+				else {
+					moveMouse(mx, my);
+					INPUT in = { 0 }; 
+					in.type = INPUT_MOUSE;
+					in.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
+					SendInput(1, &in, sizeof(in));
+					ZeroMemory(&in, sizeof(in));
+					in.type = INPUT_MOUSE;
+					in.mi.dwFlags = MOUSEEVENTF_LEFTUP;
+					SendInput(1, &in, sizeof(in));
+				}
+			
       Sleep(200);
     }
     if(GetAsyncKeyState(VK_NUMPAD1){  //If you press the numpad 1, this code will be executed
